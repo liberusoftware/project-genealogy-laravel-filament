@@ -10,7 +10,8 @@
     "laravel": "^13.0",
     "packages": {
       "liberusoftware/module-genealogy-tree-viewer": "^1.0",
-      "liberusoftware/module-genealogy-people": "^1.0"
+      "liberusoftware/module-genealogy-people": "^1.0",
+      "liberusoftware/module-genealogy-relationships": "^1.0"
     }
   },
   "capabilities": [
