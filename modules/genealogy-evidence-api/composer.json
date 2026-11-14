@@ -1,6 +1,6 @@
 {
   "name": "liberusoftware/module-genealogy-evidence-api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "liberu-module",
   "description": "Liberu genealogy-evidence-api module.",
   "license": "MIT",

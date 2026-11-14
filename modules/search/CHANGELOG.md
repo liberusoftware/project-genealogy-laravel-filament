@@ -1,9 +1,5 @@
 # Changelog
 
-## 1.5.3 - 2026-08-24
-
-- Rank prefix matches ahead of incidental contains matches for deterministic search results.
-
 ## 1.3.0 - 2026-08-06
 
 - The demo-shaped `searchPosts()`/`searchGroups()` leave for `search-demo`. `searchAll()` now

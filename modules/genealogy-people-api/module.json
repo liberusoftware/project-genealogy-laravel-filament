@@ -2,7 +2,7 @@
   "name": "genealogy-people-api",
   "display_name": "Genealogy People api",
   "description": "One-to-one api adapter for Genealogy People.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\People\\Api\\PeopleApiServiceProvider",
   "requires": {

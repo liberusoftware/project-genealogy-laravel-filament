@@ -2,7 +2,7 @@
   "name": "genealogy-discovery-api",
   "display_name": "Genealogy Discovery api",
   "description": "One-to-one api adapter for Genealogy Discovery.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\Discovery\\Api\\DiscoveryApiServiceProvider",
   "requires": {

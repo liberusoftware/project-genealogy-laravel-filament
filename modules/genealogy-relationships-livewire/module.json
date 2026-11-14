@@ -2,7 +2,7 @@
   "name": "genealogy-relationships-livewire",
   "display_name": "Genealogy Relationships livewire",
   "description": "One-to-one livewire adapter for Genealogy Relationships.",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\Relationships\\Livewire\\RelationshipsLivewireServiceProvider",
   "requires": {
@@ -20,4 +20,3 @@
   ],
   "default_enabled": true
 }
-

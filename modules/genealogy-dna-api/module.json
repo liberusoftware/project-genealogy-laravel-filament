@@ -2,7 +2,7 @@
   "name": "genealogy-dna-api",
   "display_name": "Genealogy Dna api",
   "description": "One-to-one api adapter for Genealogy Dna.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\Dna\\Api\\DnaApiServiceProvider",
   "requires": {

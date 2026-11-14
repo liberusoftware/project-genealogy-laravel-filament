@@ -2,7 +2,7 @@
   "name": "genealogy-dna",
   "display_name": "Genealogy Dna",
   "description": "Provider-neutral Genealogy Dna capability.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "capability",
   "provider": "Liberu\\Genealogy\\Dna\\DnaServiceProvider",
   "requires": {

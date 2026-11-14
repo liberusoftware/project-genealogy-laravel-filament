@@ -2,7 +2,7 @@
   "name": "genealogy-timeline-livewire",
   "display_name": "Genealogy Timeline livewire",
   "description": "One-to-one livewire adapter for Genealogy Timeline.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\Timeline\\Livewire\\TimelineLivewireServiceProvider",
   "requires": {
@@ -20,4 +20,3 @@
   ],
   "default_enabled": true
 }
-

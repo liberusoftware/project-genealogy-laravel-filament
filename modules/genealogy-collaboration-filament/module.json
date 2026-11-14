@@ -2,10 +2,19 @@
   "name": "genealogy-collaboration-filament",
   "display_name": "Genealogy Collaboration filament",
   "description": "One-to-one filament adapter for Genealogy Collaboration.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
- "provider": "Liberu\\Genealogy\\Collaboration\\Filament\\CollaborationFilamentServiceProvider",
-  "presentation": {"filament": {"admin": ["Liberu\\Genealogy\\Collaboration\\Filament\\CollaborationFilamentPlugin"], "app": ["Liberu\\Genealogy\\Collaboration\\Filament\\CollaborationFilamentPlugin"]}},
+  "provider": "Liberu\\Genealogy\\Collaboration\\Filament\\CollaborationFilamentServiceProvider",
+  "presentation": {
+    "filament": {
+      "admin": [
+        "Liberu\\Genealogy\\Collaboration\\Filament\\CollaborationFilamentPlugin"
+      ],
+      "app": [
+        "Liberu\\Genealogy\\Collaboration\\Filament\\CollaborationFilamentPlugin"
+      ]
+    }
+  },
   "requires": {
     "php": "^8.5",
     "laravel": "^13.0",

@@ -2,10 +2,19 @@
   "name": "genealogy-core-filament",
   "display_name": "Genealogy GenealogyCore filament",
   "description": "One-to-one filament adapter for Genealogy GenealogyCore.",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "category": "presentation",
- "provider": "Liberu\\Genealogy\\GenealogyCore\\Filament\\GenealogyCoreFilamentServiceProvider",
-  "presentation": {"filament": {"admin": ["Liberu\\Genealogy\\GenealogyCore\\Filament\\GenealogyCoreFilamentPlugin"], "app": ["Liberu\\Genealogy\\GenealogyCore\\Filament\\GenealogyCoreFilamentPlugin"]}},
+  "provider": "Liberu\\Genealogy\\GenealogyCore\\Filament\\GenealogyCoreFilamentServiceProvider",
+  "presentation": {
+    "filament": {
+      "admin": [
+        "Liberu\\Genealogy\\GenealogyCore\\Filament\\GenealogyCoreFilamentPlugin"
+      ],
+      "app": [
+        "Liberu\\Genealogy\\GenealogyCore\\Filament\\GenealogyCoreFilamentPlugin"
+      ]
+    }
+  },
   "requires": {
     "php": "^8.5",
     "laravel": "^13.0",

@@ -2,7 +2,7 @@
   "name": "genealogy-evidence-livewire",
   "display_name": "Genealogy Evidence livewire",
   "description": "One-to-one livewire adapter for Genealogy Evidence.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\Evidence\\Livewire\\EvidenceLivewireServiceProvider",
   "requires": {
@@ -20,4 +20,3 @@
   ],
   "default_enabled": true
 }
-

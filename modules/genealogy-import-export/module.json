@@ -2,7 +2,7 @@
   "name": "genealogy-import-export",
   "display_name": "Genealogy Import Export",
   "description": "Provider-neutral Genealogy Import Export capability.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "capability",
   "provider": "Liberu\\Genealogy\\ImportExport\\ImportExportServiceProvider",
   "requires": {

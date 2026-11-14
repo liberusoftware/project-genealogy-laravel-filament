@@ -2,10 +2,19 @@
   "name": "genealogy-discovery-filament",
   "display_name": "Genealogy Discovery filament",
   "description": "One-to-one filament adapter for Genealogy Discovery.",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "category": "presentation",
- "provider": "Liberu\\Genealogy\\Discovery\\Filament\\DiscoveryFilamentServiceProvider",
-  "presentation": {"filament": {"admin": ["Liberu\\Genealogy\\Discovery\\Filament\\DiscoveryFilamentPlugin"], "app": ["Liberu\\Genealogy\\Discovery\\Filament\\DiscoveryFilamentPlugin"]}},
+  "provider": "Liberu\\Genealogy\\Discovery\\Filament\\DiscoveryFilamentServiceProvider",
+  "presentation": {
+    "filament": {
+      "admin": [
+        "Liberu\\Genealogy\\Discovery\\Filament\\DiscoveryFilamentPlugin"
+      ],
+      "app": [
+        "Liberu\\Genealogy\\Discovery\\Filament\\DiscoveryFilamentPlugin"
+      ]
+    }
+  },
   "requires": {
     "php": "^8.5",
     "laravel": "^13.0",

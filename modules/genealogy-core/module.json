@@ -8,28 +8,14 @@
   "requires": {
     "php": "^8.5",
     "laravel": "^13.0",
-    "packages": {
-      "liberusoftware/organizations-teams": "^1.0"
-    }
+    "packages": {}
   },
   "capabilities": [
     "genealogy.genealogy-core",
-    "genealogy.genealogy-core.trees",
-    "genealogy.genealogy-core.ownership",
-    "genealogy.genealogy-core.identifiers",
-    "genealogy.genealogy-core.privacy",
-    "genealogy.genealogy-core.terminology",
-    "genealogy.genealogy-core.events",
     "genealogy.genealogy-core.lifecycle"
   ],
   "features": [
     "genealogy genealogy core",
-    "genealogy genealogy core trees",
-    "genealogy genealogy core ownership",
-    "genealogy genealogy core identifiers",
-    "genealogy genealogy core privacy",
-    "genealogy genealogy core terminology",
-    "genealogy genealogy core events",
     "genealogy genealogy core lifecycle"
   ],
   "default_enabled": true

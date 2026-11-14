@@ -2,7 +2,7 @@
   "name": "genealogy-discovery-livewire",
   "display_name": "Genealogy Discovery livewire",
   "description": "One-to-one livewire adapter for Genealogy Discovery.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\Discovery\\Livewire\\DiscoveryLivewireServiceProvider",
   "requires": {
@@ -20,4 +20,3 @@
   ],
   "default_enabled": true
 }
-

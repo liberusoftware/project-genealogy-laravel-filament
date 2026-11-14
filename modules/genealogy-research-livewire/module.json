@@ -2,7 +2,7 @@
   "name": "genealogy-research-livewire",
   "display_name": "Genealogy Research livewire",
   "description": "One-to-one livewire adapter for Genealogy Research.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\Research\\Livewire\\ResearchLivewireServiceProvider",
   "requires": {

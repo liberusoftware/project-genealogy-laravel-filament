@@ -2,7 +2,7 @@
   "name": "genealogy-core-livewire",
   "display_name": "Genealogy GenealogyCore livewire",
   "description": "One-to-one livewire adapter for Genealogy GenealogyCore.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\GenealogyCore\\Livewire\\GenealogyCoreLivewireServiceProvider",
   "requires": {

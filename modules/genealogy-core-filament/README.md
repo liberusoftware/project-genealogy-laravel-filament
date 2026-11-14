@@ -7,3 +7,19 @@ It owns only filament transport/presentation integration. Domain rules, persiste
 - Composer package: `liberusoftware/module-genealogy-core-filament`
 - Installer name: `genealogy-core-filament`
 - Package type: `liberu-module`
+
+<!-- module-presentation-guide:begin -->
+## Presentation architecture and project hosts
+
+- Capability/source key: `liberusoftware/module-genealogy-core`.
+- Actual Composer identity: `liberusoftware/module-genealogy-core-filament`.
+- [Filament capability plan](https://github.com/liberusoftware/documentation/blob/main/projects/genealogy/filament/genealogy-core.md) · [Filament standard](https://github.com/liberusoftware/documentation/blob/main/standards/FILAMENT.md) · [Module architecture](https://github.com/liberusoftware/documentation/blob/main/architecture/MODULES.md).
+
+The application owns panel composition, routing, session integration and deployment. This module owns its focused presentation and delegates domain behavior to reviewed public owner contracts. Keep host App aliases, duplicate records and client-only authorization outside reusable package boundaries.
+
+Documented consumer project families:
+
+- [Genealogy](https://github.com/liberusoftware/project-genealogy-laravel-filament): Family trees, research, evidence and collaboration.
+
+Other web, mobile and desktop presentations are listed in the [project catalog](https://github.com/liberusoftware/documentation/blob/main/projects/REPOSITORIES.md). Those skeletons provide starting structures; links do not establish feature parity, compatible releases or completed device/API integrations. Independent presentation packages keep their own Composer, npm or pub metadata.
+<!-- module-presentation-guide:end -->

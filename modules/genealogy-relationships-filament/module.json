@@ -2,10 +2,19 @@
   "name": "genealogy-relationships-filament",
   "display_name": "Genealogy Relationships filament",
   "description": "One-to-one filament adapter for Genealogy Relationships.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
- "provider": "Liberu\\Genealogy\\Relationships\\Filament\\RelationshipsFilamentServiceProvider",
-  "presentation": {"filament": {"admin": ["Liberu\\Genealogy\\Relationships\\Filament\\RelationshipsFilamentPlugin"], "app": ["Liberu\\Genealogy\\Relationships\\Filament\\RelationshipsFilamentPlugin"]}},
+  "provider": "Liberu\\Genealogy\\Relationships\\Filament\\RelationshipsFilamentServiceProvider",
+  "presentation": {
+    "filament": {
+      "admin": [
+        "Liberu\\Genealogy\\Relationships\\Filament\\RelationshipsFilamentPlugin"
+      ],
+      "app": [
+        "Liberu\\Genealogy\\Relationships\\Filament\\RelationshipsFilamentPlugin"
+      ]
+    }
+  },
   "requires": {
     "php": "^8.5",
     "laravel": "^13.0",

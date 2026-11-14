@@ -2,7 +2,7 @@
   "name": "genealogy-places-api",
   "display_name": "Genealogy Places api",
   "description": "One-to-one api adapter for Genealogy Places.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\Places\\Api\\PlacesApiServiceProvider",
   "requires": {

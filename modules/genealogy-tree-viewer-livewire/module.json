@@ -2,7 +2,7 @@
   "name": "genealogy-tree-viewer-livewire",
   "display_name": "Genealogy TreeViewer livewire",
   "description": "One-to-one livewire adapter for Genealogy TreeViewer.",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\TreeViewer\\Livewire\\TreeViewerLivewireServiceProvider",
   "requires": {

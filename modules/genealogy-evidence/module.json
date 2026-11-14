@@ -2,7 +2,7 @@
   "name": "genealogy-evidence",
   "display_name": "Genealogy Evidence",
   "description": "Provider-neutral Genealogy Evidence capability.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "capability",
   "provider": "Liberu\\Genealogy\\Evidence\\EvidenceServiceProvider",
   "requires": {

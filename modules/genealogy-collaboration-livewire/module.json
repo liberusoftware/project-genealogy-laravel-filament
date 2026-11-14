@@ -2,7 +2,7 @@
   "name": "genealogy-collaboration-livewire",
   "display_name": "Genealogy Collaboration livewire",
   "description": "One-to-one livewire adapter for Genealogy Collaboration.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\Collaboration\\Livewire\\CollaborationLivewireServiceProvider",
   "requires": {

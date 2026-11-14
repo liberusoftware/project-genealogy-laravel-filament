@@ -2,7 +2,7 @@
   "name": "genealogy-tree-viewer",
   "display_name": "Genealogy Tree Viewer",
   "description": "Provider-neutral Genealogy Tree Viewer capability.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "capability",
   "provider": "Liberu\\Genealogy\\TreeViewer\\TreeViewerServiceProvider",
   "requires": {

@@ -2,7 +2,7 @@
   "name": "genealogy-reports-api",
   "display_name": "Genealogy Reports api",
   "description": "One-to-one api adapter for Genealogy Reports.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\Reports\\Api\\ReportsApiServiceProvider",
   "requires": {

@@ -13,8 +13,6 @@ final class PeopleLivewireServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'genealogy-people-livewire');
         Livewire::component('genealogy-people-search', PersonSearch::class);
-        Livewire::component('module-genealogy-people::person-search', PersonSearch::class);
-        Livewire::component('module-genealogy-people::person-details', PersonDetails::class);
     }
 }
 

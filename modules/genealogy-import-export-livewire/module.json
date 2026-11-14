@@ -2,7 +2,7 @@
   "name": "genealogy-import-export-livewire",
   "display_name": "Genealogy ImportExport livewire",
   "description": "One-to-one livewire adapter for Genealogy ImportExport.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\ImportExport\\Livewire\\ImportExportLivewireServiceProvider",
   "requires": {
@@ -20,4 +20,3 @@
   ],
   "default_enabled": true
 }
-

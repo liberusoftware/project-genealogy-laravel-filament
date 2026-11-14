@@ -2,7 +2,7 @@
   "name": "genealogy-import-export-api",
   "display_name": "Genealogy ImportExport api",
   "description": "One-to-one api adapter for Genealogy ImportExport.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\ImportExport\\Api\\ImportExportApiServiceProvider",
   "requires": {

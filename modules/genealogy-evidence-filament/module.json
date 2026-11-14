@@ -2,10 +2,19 @@
   "name": "genealogy-evidence-filament",
   "display_name": "Genealogy Evidence filament",
   "description": "One-to-one filament adapter for Genealogy Evidence.",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "category": "presentation",
- "provider": "Liberu\\Genealogy\\Evidence\\Filament\\EvidenceFilamentServiceProvider",
-  "presentation": {"filament": {"admin": ["Liberu\\Genealogy\\Evidence\\Filament\\EvidenceFilamentPlugin"], "app": ["Liberu\\Genealogy\\Evidence\\Filament\\EvidenceFilamentPlugin"]}},
+  "provider": "Liberu\\Genealogy\\Evidence\\Filament\\EvidenceFilamentServiceProvider",
+  "presentation": {
+    "filament": {
+      "admin": [
+        "Liberu\\Genealogy\\Evidence\\Filament\\EvidenceFilamentPlugin"
+      ],
+      "app": [
+        "Liberu\\Genealogy\\Evidence\\Filament\\EvidenceFilamentPlugin"
+      ]
+    }
+  },
   "requires": {
     "php": "^8.5",
     "laravel": "^13.0",

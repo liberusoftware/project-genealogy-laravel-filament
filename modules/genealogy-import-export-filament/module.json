@@ -2,10 +2,19 @@
   "name": "genealogy-import-export-filament",
   "display_name": "Genealogy ImportExport filament",
   "description": "One-to-one filament adapter for Genealogy ImportExport.",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "category": "presentation",
- "provider": "Liberu\\Genealogy\\ImportExport\\Filament\\ImportExportFilamentServiceProvider",
-  "presentation": {"filament": {"admin": ["Liberu\\Genealogy\\ImportExport\\Filament\\ImportExportFilamentPlugin"], "app": ["Liberu\\Genealogy\\ImportExport\\Filament\\ImportExportFilamentPlugin"]}},
+  "provider": "Liberu\\Genealogy\\ImportExport\\Filament\\ImportExportFilamentServiceProvider",
+  "presentation": {
+    "filament": {
+      "admin": [
+        "Liberu\\Genealogy\\ImportExport\\Filament\\ImportExportFilamentPlugin"
+      ],
+      "app": [
+        "Liberu\\Genealogy\\ImportExport\\Filament\\ImportExportFilamentPlugin"
+      ]
+    }
+  },
   "requires": {
     "php": "^8.5",
     "laravel": "^13.0",

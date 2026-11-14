@@ -2,7 +2,7 @@
   "name": "genealogy-core-api",
   "display_name": "Genealogy GenealogyCore api",
   "description": "One-to-one api adapter for Genealogy GenealogyCore.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "presentation",
   "provider": "Liberu\\Genealogy\\GenealogyCore\\Api\\GenealogyCoreApiServiceProvider",
   "requires": {
