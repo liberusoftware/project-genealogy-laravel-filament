@@ -6,9 +6,13 @@ namespace Liberu\Genealogy\Media\Filament\Resources;
 
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Resources\Pages\PageRegistration;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -41,16 +45,16 @@ final class MediaAssetResource extends Resource
             TextInput::make('mime_type')->maxLength(255)->nullable(),
             TextInput::make('byte_size')->numeric()->minValue(0)->nullable(),
             TextInput::make('checksum')->maxLength(128)->nullable(),
-            Filament\Forms\Components\DateTimePicker::make('captured_at')->nullable(),
+            DateTimePicker::make('captured_at')->nullable(),
             TextInput::make('captured_place_id')->uuid()->nullable(),
-            Filament\Forms\Components\Textarea::make('transcription')->nullable(),
+            Textarea::make('transcription')->nullable(),
             Select::make('transcription_status')->options(array_combine(MediaAsset::TRANSCRIPTION_STATUSES, MediaAsset::TRANSCRIPTION_STATUSES))->required(),
             TextInput::make('transcription_language')->maxLength(16)->nullable(),
             TextInput::make('rights_holder')->maxLength(255)->nullable(),
             Select::make('rights_status')->options(array_combine(MediaAsset::RIGHTS_STATUSES, MediaAsset::RIGHTS_STATUSES))->nullable(),
             TextInput::make('license_url')->url()->maxLength(2000)->nullable(),
-            Filament\Forms\Components\DatePicker::make('rights_expires_at')->nullable(),
-            Filament\Forms\Components\Toggle::make('is_public'),
+            DatePicker::make('rights_expires_at')->nullable(),
+            Toggle::make('is_public'),
         ]);
     }
 

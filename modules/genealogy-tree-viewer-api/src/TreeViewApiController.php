@@ -43,7 +43,7 @@ final class TreeViewApiController
         $values = $request->validate($this->rules());
         $values['user_id'] = $request->user()->getAuthIdentifier();
 
-        return response()->json(new TreeViewResource($create->execute($values)), 201);
+        return (new TreeViewResource($create->execute($values)))->response()->setStatusCode(201);
     }
 
     public function show(Request $request, string $record): TreeViewResource

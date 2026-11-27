@@ -13,6 +13,11 @@ use Liberu\Genealogy\Relationships\Filament\Resources\RelationshipResource;
 final class RelationshipsFilamentServiceProvider extends ServiceProvider
 {
     public function register(): void {}
+
+    public function boot(): void
+    {
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'genealogy-relationships-filament');
+    }
 }
 
 final class RelationshipsFilamentPlugin implements Plugin

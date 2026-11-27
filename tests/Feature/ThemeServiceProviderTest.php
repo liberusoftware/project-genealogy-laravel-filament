@@ -21,15 +21,21 @@ it('renders the themeAsset directive against the active theme', function () {
 });
 
 it('resolves a shared view name through the active theme inheritance chain', function () {
+    $expectedView = realpath(base_path('themes/base/resources/views/layouts/app.blade.php'));
+
     app(ThemeManager::class)->setTheme('dark');
-    expect(View::getFinder()->find('layouts.app'))
-        ->toContain('themes/base/resources/views/layouts/app.blade.php');
+    $darkLayout = View::getFinder()->find('layouts.app');
+    expect(str_replace('\\', '/', $darkLayout))
+        ->toContain('themes/base/resources/views/layouts/app.blade.php')
+        ->and(realpath($darkLayout))->toBe($expectedView);
 
     View::getFinder()->flush();
 
     app(ThemeManager::class)->setTheme('default');
-    expect(View::getFinder()->find('layouts.app'))
-        ->toContain('themes/base/resources/views/layouts/app.blade.php');
+    $defaultLayout = View::getFinder()->find('layouts.app');
+    expect(str_replace('\\', '/', $defaultLayout))
+        ->toContain('themes/base/resources/views/layouts/app.blade.php')
+        ->and(realpath($defaultLayout))->toBe($expectedView);
 });
 
 it('does not throw rendering themeCss/themeJs when the theme asset is not in the Vite manifest', function () {

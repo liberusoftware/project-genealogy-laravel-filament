@@ -7,6 +7,7 @@ namespace Liberu\Genealogy\Timeline\Api;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\ValidationException;
 use Liberu\Genealogy\GenealogyCore\TeamContext;
 use Liberu\Genealogy\Timeline\Actions\CreateTimelineEvent;
 use Liberu\Genealogy\Timeline\Actions\DeleteTimelineEvent;
@@ -23,10 +24,10 @@ final class TimelineEventController
             'page' => ['sometimes', 'array'],
             'page.size' => ['sometimes', 'integer', 'between:1,100'],
             'kind' => ['sometimes', 'in:'.implode(',', TimelineEvent::KINDS)],
-            'include_private' => ['sometimes', 'boolean'],
         ]);
+        $includePrivate = $this->parseBooleanQuery($request, 'include_private');
         $perPage = $values['page']['size'] ?? 25;
-        $events = TimelineEvent::query()->when(isset($values['kind']), fn ($query) => $query->where('kind', $values['kind']))->when(! ($values['include_private'] ?? false), fn ($query) => $query->where('is_private', false))->orderByRaw('COALESCE(event_date, date_start, date_end) desc')->paginate($perPage);
+        $events = TimelineEvent::query()->when(isset($values['kind']), fn ($query) => $query->where('kind', $values['kind']))->when(! $includePrivate, fn ($query) => $query->where('is_private', false))->orderByRaw('COALESCE(event_date, date_start, date_end) desc')->paginate($perPage);
 
         return response()->json(['data' => $events->getCollection()->map(fn (TimelineEvent $event): array => $this->resource($event))->values()->all(), 'meta' => ['current_page' => $events->currentPage(), 'per_page' => $events->perPage(), 'total' => $events->total()]]);
     }
@@ -79,16 +80,33 @@ final class TimelineEventController
 
     public function timeline(Request $request, ChronologicalTimeline $timeline): JsonResponse
     {
-        $values = $request->validate(['subject_person_id' => ['nullable', 'uuid', $this->personRule()], 'family_key' => ['nullable', 'string', 'max:255'], 'from' => ['nullable', 'date'], 'to' => ['nullable', 'date', 'after_or_equal:from'], 'include_private' => ['sometimes', 'boolean']]);
+        $values = $request->validate(['subject_person_id' => ['nullable', 'uuid', $this->personRule()], 'family_key' => ['nullable', 'string', 'max:255'], 'from' => ['nullable', 'date'], 'to' => ['nullable', 'date', 'after_or_equal:from']]);
+        $includePrivate = $this->parseBooleanQuery($request, 'include_private');
 
-        return response()->json(['data' => $timeline->execute($values['subject_person_id'] ?? null, $values['family_key'] ?? null, $values['from'] ?? null, $values['to'] ?? null, $values['include_private'] ?? false)]);
+        return response()->json(['data' => $timeline->execute($values['subject_person_id'] ?? null, $values['family_key'] ?? null, $values['from'] ?? null, $values['to'] ?? null, $includePrivate)]);
     }
 
     public function conflicts(Request $request, ConflictingTimelineEvents $conflicts): JsonResponse
     {
-        $values = $request->validate(['subject_person_id' => ['nullable', 'uuid', $this->personRule()], 'include_private' => ['sometimes', 'boolean']]);
+        $values = $request->validate(['subject_person_id' => ['nullable', 'uuid', $this->personRule()]]);
+        $includePrivate = $this->parseBooleanQuery($request, 'include_private');
 
-        return response()->json(['data' => $conflicts->execute($values['subject_person_id'] ?? null, $values['include_private'] ?? false)]);
+        return response()->json(['data' => $conflicts->execute($values['subject_person_id'] ?? null, $includePrivate)]);
+    }
+
+    private function parseBooleanQuery(Request $request, string $key): bool
+    {
+        if (! $request->has($key)) {
+            return false;
+        }
+
+        $raw = $request->input($key);
+
+        return match (true) {
+            $raw === true, $raw === 1, $raw === '1', is_string($raw) && strtolower($raw) === 'true' => true,
+            $raw === false, $raw === 0, $raw === '0', is_string($raw) && strtolower($raw) === 'false' => false,
+            default => throw ValidationException::withMessages([$key => ["The {$key} field must be true or false."]]),
+        };
     }
 
     /** @return array<string, mixed> */

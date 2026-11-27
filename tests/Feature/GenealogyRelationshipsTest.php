@@ -142,6 +142,7 @@ it('reconciles relationship endpoints when a person is merged', function (): voi
 it('filters relationship edges by person, type, and confidence through the API', function (): void {
     $user = User::factory()->create();
     $team = Team::factory()->create(['user_id' => $user->id]);
+    $user->forceFill(['current_team_id' => $team->id])->save();
     app(TeamContext::class)->set($team->id);
     $person = (new CreatePerson())->execute(['given_name' => 'Person']);
     $related = (new CreatePerson())->execute(['given_name' => 'Related']);
@@ -199,6 +200,7 @@ it('preserves gendered collateral relationship labels from the legacy tree servi
 it('exposes the relationship calculator through the API and Livewire adapter', function (): void {
     $user = User::factory()->create();
     $team = Team::factory()->create(['user_id' => $user->id]);
+    $user->forceFill(['current_team_id' => $team->id])->save();
     app(TeamContext::class)->set($team->id);
     $parent = (new CreatePerson())->execute(['given_name' => 'Parent']);
     $child = (new CreatePerson())->execute(['given_name' => 'Child']);

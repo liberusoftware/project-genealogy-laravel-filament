@@ -86,6 +86,7 @@ it('includes open-ended events that overlap a bounded range', function (): void 
 it('groups conflicting evidence and exposes the conflict view through the API', function (): void {
     $user = User::factory()->create();
     $team = Team::factory()->create(['user_id' => $user->id]);
+    $user->forceFill(['current_team_id' => $team->id])->save();
     app(TeamContext::class)->set($team->id);
     (new CreateTimelineEvent())->execute(['name' => 'Birth certificate date', 'event_date' => '1900-01-01', 'conflict_group' => 'birth-date']);
     (new CreateTimelineEvent())->execute(['name' => 'Family bible date', 'event_date' => '1900-01-02', 'conflict_group' => 'birth-date']);

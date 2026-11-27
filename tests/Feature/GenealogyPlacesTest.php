@@ -96,6 +96,7 @@ it('protects and validates the Places Livewire boundary', function (): void {
 it('uses the stable place resource type in the API', function (): void {
     $user = User::factory()->create();
     $team = Team::factory()->create(['user_id' => $user->id]);
+    $user->forceFill(['current_team_id' => $team->id])->save();
     app(TeamContext::class)->set($team->id);
 
     $this->actingAs($user)
@@ -107,6 +108,7 @@ it('uses the stable place resource type in the API', function (): void {
 it('exposes the names-over-time lifecycle through tenant-scoped API actions', function (): void {
     $user = User::factory()->create();
     $team = Team::factory()->create(['user_id' => $user->id]);
+    $user->forceFill(['current_team_id' => $team->id])->save();
     app(TeamContext::class)->set($team->id);
     $place = (new CreatePlace())->execute(['name' => 'London']);
 
@@ -142,6 +144,7 @@ it('keeps place names behind domain lifecycle actions', function (): void {
 it('projects a nested place hierarchy through the API', function (): void {
     $user = User::factory()->create();
     $team = Team::factory()->create(['user_id' => $user->id]);
+    $user->forceFill(['current_team_id' => $team->id])->save();
     app(TeamContext::class)->set($team->id);
     $country = (new CreatePlace())->execute(['name' => 'Country']);
     $city = (new CreatePlace())->execute(['name' => 'City', 'parent_id' => $country->id]);

@@ -85,6 +85,7 @@ it('rejects proof conclusions without assertions and cross-team subjects', funct
 it('uses the stable evidence resource type in the API', function (): void {
     $user = User::factory()->create();
     $team = Team::factory()->create(['user_id' => $user->id]);
+    $user->forceFill(['current_team_id' => $team->id])->save();
     app(TeamContext::class)->set($team->id);
 
     $this->actingAs($user)

@@ -14,6 +14,9 @@ final class EvidenceLivewireServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'genealogy-evidence-livewire');
         Livewire::component('genealogy-evidence-list', EvidenceRecordList::class);
         Livewire::component('genealogy-evidence-editor', EvidenceEditor::class);
+        Livewire::component('genealogy-evidence-citation-links', CitationLinks::class);
+        Livewire::component('genealogy-evidence-entity-list', EvidenceEntityList::class);
+        Livewire::component('genealogy-evidence-entity-editor', EvidenceEntityEditor::class);
         Livewire::component('module-genealogy-evidence::evidence-list', EvidenceRecordList::class);
         Livewire::component('module-genealogy-evidence::evidence-editor', EvidenceEditor::class);
         Livewire::component('module-genealogy-evidence::citation-links', CitationLinks::class);

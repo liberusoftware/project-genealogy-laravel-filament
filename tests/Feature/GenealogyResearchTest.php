@@ -70,6 +70,7 @@ it('validates research project updates through the domain boundary', function ()
 it('filters research queues by kind, status, and overdue work through the API', function (): void {
     $user = User::factory()->create();
     $team = Team::factory()->create(['user_id' => $user->id]);
+    $user->forceFill(['current_team_id' => $team->id])->save();
     app(TeamContext::class)->set($team->id);
     $project = (new CreateResearchProject())->execute(['name' => 'Research queue', 'status' => 'active']);
     (new CreateResearchEntry())->execute(['research_project_id' => $project->id, 'kind' => 'task', 'title' => 'Overdue task', 'due_date' => now()->subDay()->toDateString()]);

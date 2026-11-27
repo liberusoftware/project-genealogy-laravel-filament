@@ -293,6 +293,7 @@ it('rejects an oversized nested page size on DNA kit collections', function (): 
 it('returns DNA collection resources as a flat data/meta envelope', function (): void {
     $user = User::factory()->create();
     $team = Team::factory()->create(['user_id' => $user->id]);
+    $user->forceFill(['current_team_id' => $team->getKey()])->save();
     app(TeamContext::class)->set($team->getKey());
     $kit = app(CreateDnaKit::class)->execute(['name' => 'Envelope kit']);
     app(CreateDnaMatch::class)->execute(['kit_id' => $kit->getKey(), 'external_id' => 'envelope-match']);
