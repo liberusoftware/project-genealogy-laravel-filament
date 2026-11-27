@@ -191,6 +191,14 @@
     "source_tree": "9eb130bc9a1202bcbe46fed6f7edbb07b6460d87",
     "version": "1.1.0"
   },
+  "liberusoftware/module-genealogy-core": {
+    "path": "modules/genealogy-core",
+    "reference": "a5bf254f72dee11f4b9196fa16cd7a2b8dc5d8f0",
+    "repository": "https://github.com/liberusoftware/module-genealogy-core",
+    "source_signature": "9dbb65ff76a41e248eb4083d0d44d8d63b0818219a849de4d830bf2011dd5c66",
+    "source_tree": "31f44bf73f7a099d2575959eb48336b1874ed4b9",
+    "version": "1.1.0"
+  },
   "liberusoftware/module-genealogy-core-api": {
     "path": "modules/genealogy-core-api",
     "reference": "c6b3eda3ff843574d038c57aa640bafafe2d0d3b",
@@ -375,6 +383,14 @@
     "source_tree": "fbd10a01f15c8c5fc6822e93192dba8f78494039",
     "version": "1.1.0"
   },
+  "liberusoftware/module-genealogy-media-livewire": {
+    "path": "modules/genealogy-media-livewire",
+    "reference": "a4c7578919f91ed4abbaca6563f54e45b22e409b",
+    "repository": "https://github.com/liberusoftware/module-genealogy-media-livewire",
+    "source_signature": "74a759b92eed8ddfb8525340a62fe80707f6ba8ea91450ce54b5f349f5502e16",
+    "source_tree": "f99c2b75989b00aa6361c7261f8e1972f67a48e5",
+    "version": "1.1.0"
+  },
   "liberusoftware/module-genealogy-people": {
     "path": "modules/genealogy-people",
     "reference": "674b35ffe25e0eaec9a8a89f69b08ca5513bb640",
@@ -397,6 +413,14 @@
     "repository": "https://github.com/liberusoftware/module-genealogy-people-filament",
     "source_signature": "40fe04b1c3b6466271d5f78dd993e1842758fbf0bc5ed4f8e0ae143567ce040b",
     "source_tree": "10b1a5a2c0734ded83f05ed905efa0b9ffd91b6c",
+    "version": "1.1.0"
+  },
+  "liberusoftware/module-genealogy-people-livewire": {
+    "path": "modules/genealogy-people-livewire",
+    "reference": "f77843b93bf978c4192912fe51a1bb061177c21d",
+    "repository": "https://github.com/liberusoftware/module-genealogy-people-livewire",
+    "source_signature": "b7b11d6d8461376e0701e16e69968b4203bcba5164ec038d1d48785ba032f140",
+    "source_tree": "154589e6dd6d5538778635d0dc6f19c7b61f1c78",
     "version": "1.1.0"
   },
   "liberusoftware/module-genealogy-places": {
