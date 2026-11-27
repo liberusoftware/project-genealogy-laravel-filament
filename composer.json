@@ -42,7 +42,7 @@
         "liberusoftware/identity-core-filament": "^1.0",
         "liberusoftware/identity-socialstream": "^1.0",
         "liberusoftware/import-export": "^1.0",
-        "liberusoftware/integrations": "^1.0",
+        "liberusoftware/integrations": "~1.8.2",
         "liberusoftware/jetstream-bridge": "^1.0",
         "liberusoftware/localization-contracts": "^1.0",
         "liberusoftware/localization-core": "^1.0",
@@ -52,7 +52,7 @@
         "liberusoftware/module-genealogy-collaboration-api": "^1.0",
         "liberusoftware/module-genealogy-collaboration-filament": "^1.0",
         "liberusoftware/module-genealogy-collaboration-livewire": "^1.0",
-        "liberusoftware/module-genealogy-core": "^1.0",
+        "liberusoftware/module-genealogy-core": "^1.1",
         "liberusoftware/module-genealogy-core-api": "^1.0",
         "liberusoftware/module-genealogy-core-filament": "^1.0",
         "liberusoftware/module-genealogy-core-livewire": "^1.0",
@@ -76,11 +76,11 @@
         "liberusoftware/module-genealogy-media": "^1.0",
         "liberusoftware/module-genealogy-media-api": "^1.0",
         "liberusoftware/module-genealogy-media-filament": "^1.0",
-        "liberusoftware/module-genealogy-media-livewire": "^1.0",
+        "liberusoftware/module-genealogy-media-livewire": "^1.1",
         "liberusoftware/module-genealogy-people": "^1.0",
         "liberusoftware/module-genealogy-people-api": "^1.0",
         "liberusoftware/module-genealogy-people-filament": "^1.0",
-        "liberusoftware/module-genealogy-people-livewire": "^1.0",
+        "liberusoftware/module-genealogy-people-livewire": "^1.1",
         "liberusoftware/module-genealogy-places": "^1.0",
         "liberusoftware/module-genealogy-places-api": "^1.0",
         "liberusoftware/module-genealogy-places-filament": "^1.0",
@@ -126,7 +126,7 @@
         "liberusoftware/notifications": "^1.0",
         "liberusoftware/observability": "^1.0",
         "liberusoftware/organizations-teams": "^1.15.0",
-        "liberusoftware/organizations-teams-filament": "^1.7.0",
+        "liberusoftware/organizations-teams-filament": "^1.8.0",
         "liberusoftware/profiles": "^1.0",
         "liberusoftware/roles-permissions": "^1.9.0",
         "liberusoftware/roles-permissions-filament": "^1.0",
@@ -202,7 +202,7 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "test": "vendor/bin/pest"
+        "test": "php -d memory_limit=1G vendor/bin/pest"
     },
     "extra": {
         "laravel": {

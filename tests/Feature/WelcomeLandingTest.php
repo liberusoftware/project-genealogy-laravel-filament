@@ -4,7 +4,7 @@ it('renders the genealogy landing at /', function () {
     $response = $this->get('/');
 
     $response->assertOk();
-    $response->assertSee('Keep the people and stories together.', false);
+    $response->assertSee('Build your family history with confidence.', false);
     $response->assertSee('Begin your family history', false);
     $response->assertSee('Liberu Genealogy', false);
     $response->assertSee('https://github.com/liberusoftware/genealogy-laravel', false);

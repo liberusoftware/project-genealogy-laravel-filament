@@ -6,8 +6,11 @@ namespace Liberu\Genealogy\Timeline\Filament\Resources;
 
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Resources\Pages\PageRegistration;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -39,17 +42,17 @@ final class TimelineEventResource extends Resource
             )))->required(),
             TextInput::make('subject_person_id')->uuid()->nullable(),
             TextInput::make('family_key')->maxLength(255)->nullable(),
-            Filament\Forms\Components\DatePicker::make('event_date')->nullable(),
-            Filament\Forms\Components\DatePicker::make('date_start')->nullable(),
-            Filament\Forms\Components\DatePicker::make('date_end')->nullable(),
+            DatePicker::make('event_date')->nullable(),
+            DatePicker::make('date_start')->nullable(),
+            DatePicker::make('date_end')->nullable(),
             Select::make('date_precision')->options(array_combine(TimelineEvent::DATE_PRECISIONS, TimelineEvent::DATE_PRECISIONS))->required(),
             TextInput::make('place_id')->uuid()->nullable(),
-            Filament\Forms\Components\Textarea::make('description')->nullable(),
-            Filament\Forms\Components\Textarea::make('historical_context')->nullable(),
+            Textarea::make('description')->nullable(),
+            Textarea::make('historical_context')->nullable(),
             TextInput::make('conflict_group')->maxLength(255)->nullable(),
             TextInput::make('confidence')->numeric()->minValue(0)->maxValue(100)->nullable(),
             TextInput::make('source_reference')->maxLength(255)->nullable(),
-            Filament\Forms\Components\Toggle::make('is_private'),
+            Toggle::make('is_private'),
         ]);
     }
 

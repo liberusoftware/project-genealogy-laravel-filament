@@ -17,7 +17,7 @@ final class ResearchApiServiceProvider extends ServiceProvider
             $router->apiResource('api/v1/genealogy/research/{project}/entries', ResearchEntryController::class)
                 ->parameters(['entries' => 'entry']);
             $router->apiResource('api/v1/genealogy/research', ResearchProjectController::class)
-                ->parameters(['research-projects' => 'record']);
+                ->parameters(['research' => 'record']);
         });
     }
 }

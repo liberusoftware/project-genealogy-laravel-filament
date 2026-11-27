@@ -13,6 +13,7 @@ final class GenealogyCoreLivewireServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'genealogy-core-livewire');
+        Livewire::component('genealogy-core-tree-manager', TreeManager::class);
         Livewire::component('module-genealogy-core::tree-manager', TreeManager::class);
     }
 }

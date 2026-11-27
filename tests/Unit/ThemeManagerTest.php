@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\View;
 use Illuminate\View\FileViewFinder;
 use Liberu\Foundation\Theme\Services\ThemeManager;
 
+function normalizeThemePath(string $path): string
+{
+    return str_replace('\\', '/', $path);
+}
+
 beforeEach(function () {
     $this->themeManager = new ThemeManager();
 });
@@ -47,14 +52,16 @@ test('cannot set non-existent theme', function () {
 test('can get theme path', function () {
     $themePath = $this->themeManager->getThemePath('default');
 
-    expect($themePath)->toContain('themes/default')
+    expect(normalizeThemePath($themePath))->toContain('themes/default')
+        ->and(realpath($themePath))->toBe(realpath(base_path('themes/default')))
         ->and(File::exists($themePath))->toBeTrue();
 });
 
 test('can get theme views path', function () {
     $themeViewsPath = $this->themeManager->getThemeViewsPath('default');
 
-    expect($themeViewsPath)->toContain('themes/default/resources/views')
+    expect(normalizeThemePath($themeViewsPath))->toContain('themes/default/resources/views')
+        ->and(realpath($themeViewsPath))->toBe(realpath(base_path('themes/default/resources/views')))
         ->and(File::exists($themeViewsPath))->toBeTrue();
 });
 
@@ -124,14 +131,16 @@ test('theme_path helper returns path', function () {
     $path = theme_path('default');
 
     expect($path)->toBeString()
-        ->and($path)->toContain('themes/default');
+        ->and(normalizeThemePath($path))->toContain('themes/default')
+        ->and(realpath($path))->toBe(realpath(base_path('themes/default')));
 });
 
 test('theme_views_path helper returns views path', function () {
     $path = theme_views_path('default');
 
     expect($path)->toBeString()
-        ->and($path)->toContain('themes/default/resources/views');
+        ->and(normalizeThemePath($path))->toContain('themes/default/resources/views')
+        ->and(realpath($path))->toBe(realpath(base_path('themes/default/resources/views')));
 });
 
 test('repeated setTheme calls do not grow the view finder paths', function () {
@@ -142,14 +151,19 @@ test('repeated setTheme calls do not grow the view finder paths', function () {
     }
 
     $themeViewsPath = $this->themeManager->getThemeViewsPath('default');
+    $resolvedThemeViewsPath = realpath($themeViewsPath) ?: $themeViewsPath;
 
     for ($i = 0; $i < 5; $i++) {
         $this->themeManager->setTheme('default');
     }
 
     $paths = $finder->getPaths();
+    $normalizedPaths = array_map(
+        static fn (string $path): string => normalizeThemePath(realpath($path) ?: $path),
+        $paths,
+    );
 
-    expect(array_count_values($paths)[$themeViewsPath] ?? 0)->toBe(1);
+    expect(array_count_values($normalizedPaths)[normalizeThemePath($resolvedThemeViewsPath)] ?? 0)->toBe(1);
 
     $countAfterFirstCall = count($paths);
     $this->themeManager->setTheme('default');

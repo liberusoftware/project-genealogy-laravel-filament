@@ -34,7 +34,7 @@ final class CollaborationApiServiceProvider extends ServiceProvider
             $router->post('api/v1/genealogy/collaboration/watches/toggle', [CollaborationWorkflowController::class, 'toggleWatch']);
             $router->get('api/v1/genealogy/collaboration/attributions', [CollaborationWorkflowController::class, 'attributions']);
             $router->apiResource('api/v1/genealogy/collaboration', CollaborationSpaceController::class)
-                ->parameters(['collaboration-spaces' => 'record']);
+                ->parameters(['collaboration' => 'record']);
         });
     }
 }

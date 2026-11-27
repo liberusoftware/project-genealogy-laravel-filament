@@ -5,6 +5,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Liberu\Foundation\Organizations\Models\Team;
 use Liberu\Foundation\RolesPermissions\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\PermissionRegistrar;
 
 uses(RefreshDatabase::class);
 
@@ -24,7 +25,10 @@ it('lets a super_admin view resources even with no permissions generated', funct
     $user->assignRole('super_admin');
     $user->unsetRelation('roles');
 
-    // No permissions exist (shield:generate not run); visibility must come from the gate.
+    // Clear any catalog-seeded permissions so visibility must come strictly from the gate.
+    Permission::query()->delete();
+    app(PermissionRegistrar::class)->forgetCachedPermissions();
+
     expect(Permission::count())->toBe(0);
     expect($user->can('viewAny', User::class))->toBeTrue();
 });

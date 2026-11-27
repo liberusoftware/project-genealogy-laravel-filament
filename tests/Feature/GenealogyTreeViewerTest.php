@@ -18,6 +18,7 @@ uses(RefreshDatabase::class);
 it('builds bounded pedigree and descendant graphs without exposing living people publicly', function (): void {
     $user = User::factory()->create();
     $team = Team::factory()->create(['user_id' => $user->id]);
+    $user->forceFill(['current_team_id' => $team->id])->save();
     app(TeamContext::class)->set($team->id);
     $root = (new CreatePerson())->execute(['given_name' => 'Deceased', 'death_date' => '1950-01-01']);
     $livingChild = (new CreatePerson())->execute(['given_name' => 'Living child']);
